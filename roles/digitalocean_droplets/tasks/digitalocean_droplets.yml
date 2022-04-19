@@ -1,0 +1,17 @@
+---
+- name: ensure digitalocean droplets
+  include_tasks: digitalocean_droplet.yml
+  vars:
+    digitalocean_droplet_name: "{{ digitalocean_droplet.name | mandatory }}"
+    digitalocean_droplet_region: "{{ digitalocean_droplet.region | mandatory }}"
+    digitalocean_droplet_oauth_token: "{{ digitalocean_droplet.oauth_token | default(digitalocean_droplets_oauth_token) }}"
+    digitalocean_droplet_size: "{{ digitalocean_droplet.size | mandatory }}"
+    digitalocean_droplet_image: "{{ digitalocean_droplet.image | mandatory }}"
+    digitalocean_droplet_firewall: "{{ digitalocean_droplet.firewall | default(omit) }}"
+    digitalocean_droplet_ssh_keys: "{{ digitalocean_droplet.ssh_keys | default(digitalocean_droplets_ssh_keys) }}"
+    digitalocean_droplet_monitoring: "{{ digitalocean_droplet.monitoring | default(digitalocean_droplets_monitoring) }}"
+    digitalocean_droplet_state: "{{ digitalocean_droplet.state | default(digitalocean_droplets_state) }}"
+  loop: "{{ digitalocean_droplets }}"
+  loop_control:
+    label: "{{ digitalocean_droplet_name }}"
+    loop_var: digitalocean_droplet
