@@ -1,0 +1,14 @@
+---
+namespace: damex
+name: digitalocean
+version: 0.0.1
+readme: README.md
+authors:
+  - Roman Kuzmitskii <ansible@damex.org>
+license_file: LICENSE
+tags:
+  - digitalocean
+repository: https://github.com/damex/ansible-collections-digitalocean
+issues: https://github.com/damex/ansible-collections-digitalocean/issues
+dependencies:
+  community.digitalocean: "*"
