@@ -1,4 +1,12 @@
 ---
+- name: ensure digitalocean droplet sshkeys ids
+  set_fact:
+    digitalocean_droplet_ssh_keys_ids: "{{ digitalocean_droplet_ssh_keys_ids | default([]) + digitalocean_sshkeys_facts.data | selectattr('name', 'match', digitalocean_droplet_ssh_key) | map(attribute='id') }}"
+  failed_when: not digitalocean_sshkeys_facts.data | selectattr('name', 'match', digitalocean_droplet_ssh_key)
+  loop: "{{ digitalocean_droplet_ssh_keys }}"
+  loop_control:
+    loop_var: digitalocean_droplet_ssh_key
+
 - name: ensure digitalocean droplet
   community.digitalocean.digital_ocean_droplet:
     name: "{{ digitalocean_droplet_name }}"
@@ -8,7 +16,7 @@
     image: "{{ digitalocean_droplet_image }}"
     unique_name: true
     firewall: "{{ digitalocean_droplet_firewall | default(omit) }}"
-    ssh_keys: "{{ digitalocean_droplet_ssh_keys }}"
+    ssh_keys: "{{ digitalocean_droplet_ssh_keys_ids }}"
     monitoring: "{{ digitalocean_droplet_monitoring }}"
     state: "{{ digitalocean_droplet_state }}"
   when: (digitalocean_droplet_state == "present" and not digitalocean_droplets_facts.data | selectattr('name', 'match', digitalocean_droplet_name))

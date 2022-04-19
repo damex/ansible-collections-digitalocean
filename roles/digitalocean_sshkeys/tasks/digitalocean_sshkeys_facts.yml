@@ -1,0 +1,5 @@
+---
+- name: ensure digitalocean sshkeys facts
+  community.digitalocean.digital_ocean_sshkey_info:
+    oauth_token: "{{ digitalocean_sshkeys_oauth_token }}"
+  register: digitalocean_sshkeys_facts

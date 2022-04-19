@@ -1,0 +1,12 @@
+---
+- name: ensure digitalocean sshkeys
+  include_tasks: digitalocean_sshkey.yml
+  vars:
+    digitalocean_sshkey_name: "{{ digitalocean_sshkey.name | mandatory }}"
+    digitalocean_sshkey_oauth_token: "{{ digitalocean_sshkey.oauth_token | default(digitalocean_sshkeys_oauth_token) }}"
+    digitalocean_sshkey_ssh_pub_key: "{{ digitalocean_sshkey.ssh_pub_key | mandatory }}"
+    digitalocean_sshkey_state: "{{ digitalocean_sshkey.state | default(digitalocean_sshkeys_state) }}"
+  loop: "{{ digitalocean_sshkeys }}"
+  loop_control:
+    label: "{{ digitalocean_sshkey_name }}"
+    loop_var: digitalocean_sshkey
