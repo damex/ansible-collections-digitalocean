@@ -1,0 +1,7 @@
+---
+- name: ensure digitalocean sshkey
+  community.digitalocean.digital_ocean_sshkey:
+    name: "{{ digitalocean_sshkey_name }}"
+    oauth_token: "{{ digitalocean_sshkey_oauth_token }}"
+    ssh_pub_key: "{{ digitalocean_sshkey_ssh_pub_key }}"
+    state: "{{ digitalocean_sshkey_state }}"
