@@ -1,0 +1,15 @@
+---
+- name: ensure digitalocean droplet
+  community.digitalocean.digital_ocean_droplet:
+    name: "{{ digitalocean_droplet_name }}"
+    region: "{{ digitalocean_droplet_region }}"
+    oauth_token: "{{ digitalocean_droplet_oauth_token }}"
+    size: "{{ digitalocean_droplet_size }}"
+    image: "{{ digitalocean_droplet_image }}"
+    unique_name: true
+    firewall: "{{ digitalocean_droplet_firewall | default(omit) }}"
+    ssh_keys: "{{ digitalocean_droplet_ssh_keys }}"
+    monitoring: "{{ digitalocean_droplet_monitoring }}"
+    state: "{{ digitalocean_droplet_state }}"
+  when: (digitalocean_droplet_state == "present" and not digitalocean_droplets_facts.data | selectattr('name', 'match', digitalocean_droplet_name))
+    or digitalocean_droplet_state == "absent"
