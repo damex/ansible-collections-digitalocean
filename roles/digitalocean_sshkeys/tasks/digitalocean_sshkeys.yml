@@ -1,6 +1,6 @@
 ---
 - name: ensure digitalocean sshkeys
-  include_tasks: digitalocean_sshkey.yml
+  ansible.builtin.include_tasks: digitalocean_sshkey.yml
   vars:
     digitalocean_sshkey_name: "{{ digitalocean_sshkey.name | mandatory }}"
     digitalocean_sshkey_oauth_token: "{{ digitalocean_sshkey.oauth_token | default(digitalocean_sshkeys_oauth_token) }}"
