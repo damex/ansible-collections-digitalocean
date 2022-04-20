@@ -1,0 +1,4 @@
+---
+digitalocean_vpcs: []
+digitalocean_vpcs_oauth_token: ""
+digitalocean_vpcs_state: present

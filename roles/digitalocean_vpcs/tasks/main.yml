@@ -1,0 +1,8 @@
+---
+- name: ensure digitalocean vpcs
+  block:
+    - name: ensure digitalocean vpcs
+      ansible.builtin.import_tasks: digitalocean_vpcs.yml
+  tags:
+    - digitalocean
+    - digitalocean_vpcs
