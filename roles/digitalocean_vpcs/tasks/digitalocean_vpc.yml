@@ -1,0 +1,9 @@
+---
+- name: ensure digitalocean vpc
+  community.digitalocean.digital_ocean_vpc:
+    name: "{{ digitalocean_vpc_name }}"
+    oauth_token: "{{ digitalocean_vpc_oauth_token }}"
+    default: "{{ digitalocean_vpc_default }}"
+    region: "{{ digitalocean_vpc_region }}"
+    ip_range: "{{ digitalocean_vpc_ip_range }}"
+    state: "{{ digitalocean_vpc_state }}"
