@@ -1,6 +1,6 @@
 ---
 - name: ensure digitalocean droplets
-  include_tasks: digitalocean_droplet.yml
+  ansible.builtin.include_tasks: digitalocean_droplet.yml
   vars:
     digitalocean_droplet_name: "{{ digitalocean_droplet.name | mandatory }}"
     digitalocean_droplet_region: "{{ digitalocean_droplet.region | mandatory }}"
