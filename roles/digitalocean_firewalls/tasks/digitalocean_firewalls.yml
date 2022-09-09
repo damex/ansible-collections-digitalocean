@@ -1,0 +1,15 @@
+---
+- name: ensure digitalocean firewalls
+  ansible.builtin.include_tasks: digitalocean_firewall.yml
+  vars:
+    digitalocean_firewall_name: "{{ digitalocean_firewall.name | mandatory }}"
+    digitalocean_firewall_baseurl: "{{ digitalocean_firewall.baseurl | default(omit) }}"
+    digitalocean_firewall_oauth_token: "{{ digitalocean_firewall.oauth_token | default(digitalocean_firewalls_oauth_token) }}"
+    digitalocean_firewall_inbound_rules: "{{ digitalocean_firewall.inbound_rules | mandatory }}"
+    digitalocean_firewall_outbound_rules: "{{ digitalocean_firewall.outbound_rules | mandatory }}"
+    digitalocean_firewall_state: "{{ digitalocean_firewall.state | default(digitalocean_firewalls_state) }}"
+    digitalocean_firewall_tags: "{{ digitalocean_firewall.tags | default(omit) }}"
+  loop: "{{ digitalocean_firewalls }}"
+  loop_control:
+    label: "{{ digitalocean_firewall_name }}"
+    loop_var: digitalocean_firewall
