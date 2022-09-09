@@ -2,6 +2,7 @@
 - name: ensure digitalocean vpc
   community.digitalocean.digital_ocean_vpc:
     name: "{{ digitalocean_vpc_name }}"
+    baseurl: "{{ digitalocean_vpc_baseurl | default(omit) }}"
     oauth_token: "{{ digitalocean_vpc_oauth_token }}"
     default: "{{ digitalocean_vpc_default }}"
     region: "{{ digitalocean_vpc_region }}"

@@ -3,6 +3,7 @@
   ansible.builtin.include_tasks: digitalocean_vpc.yml
   vars:
     digitalocean_vpc_name: "{{ digitalocean_vpc.name | mandatory }}"
+    digitalocean_vpc_baseurl: "{{ digitalocean_vpc_baseurl | default(omit) }}"
     digitalocean_vpc_oauth_token: "{{ digitalocean_vpc.oauth_token | default(digitalocean_vpcs_oauth_token) }}"
     digitalocean_vpc_default: "{{ digitalocean_vpc.default | mandatory }}"
     digitalocean_vpc_region: "{{ digitalocean_vpc.region | mandatory }}"
