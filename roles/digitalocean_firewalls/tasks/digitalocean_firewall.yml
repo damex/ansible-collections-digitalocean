@@ -1,0 +1,10 @@
+---
+- name: ensure digitalocean firewall
+  community.digitalocean.digital_ocean_firewall:
+    name: "{{ digitalocean_firewall_name }}"
+    baseurl: "{{ digitalocean_firewall_baseurl | default(omit) }}"
+    oauth_token: "{{ digitalocean_firewall_oauth_token }}"
+    inbound_rules: "{{ digitalocean_firewall_inbound_rules }}"
+    outbound_rules: "{{ digitalocean_firewall_outbound_rules }}"
+    state: "{{ digitalocean_firewall_state }}"
+    tags: "{{ digitalocean_firewall_tags | default(omit) }}"
