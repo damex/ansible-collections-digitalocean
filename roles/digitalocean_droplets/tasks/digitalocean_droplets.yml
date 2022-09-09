@@ -4,6 +4,7 @@
   vars:
     digitalocean_droplet_name: "{{ digitalocean_droplet.name | mandatory }}"
     digitalocean_droplet_region: "{{ digitalocean_droplet.region | mandatory }}"
+    digitalocean_droplet_baseurl: "{{ digitalocean_droplet.baseurl | default(omit) }}"
     digitalocean_droplet_oauth_token: "{{ digitalocean_droplet.oauth_token | default(digitalocean_droplets_oauth_token) }}"
     digitalocean_droplet_size: "{{ digitalocean_droplet.size | mandatory }}"
     digitalocean_droplet_image: "{{ digitalocean_droplet.image | mandatory }}"
