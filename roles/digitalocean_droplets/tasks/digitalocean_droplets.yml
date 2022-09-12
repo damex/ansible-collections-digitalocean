@@ -10,6 +10,7 @@
     digitalocean_droplet_image: "{{ digitalocean_droplet.image | mandatory }}"
     digitalocean_droplet_firewall: "{{ digitalocean_droplet.firewall | default(omit) }}"
     digitalocean_droplet_ssh_keys: "{{ digitalocean_droplet.ssh_keys | default(digitalocean_droplets_ssh_keys) }}"
+    digitalocean_droplet_ipv6: "{{ digitalocean_droplet.ipv6 | default(digitalocean_droplets_ipv6) }}"
     digitalocean_droplet_monitoring: "{{ digitalocean_droplet.monitoring | default(digitalocean_droplets_monitoring) }}"
     digitalocean_droplet_state: "{{ digitalocean_droplet.state | default(digitalocean_droplets_state) }}"
     digitalocean_droplet_tags: "{{ digitalocean_droplet.tags | default(digitalocean_droplets_tags) }}"

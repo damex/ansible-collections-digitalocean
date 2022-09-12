@@ -1,7 +1,7 @@
 ---
 namespace: damex
 name: digitalocean
-version: 0.0.12
+version: 0.0.13
 readme: README.md
 authors:
   - Roman Kuzmitskii <ansible@damex.org>
