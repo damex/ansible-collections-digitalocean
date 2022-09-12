@@ -2,6 +2,6 @@
 digitalocean_droplets: []
 digitalocean_droplets_oauth_token: ""
 digitalocean_droplets_ssh_keys: []
-digitalocean_droplets_monitoring: true
+digitalocean_droplets_monitoring: false
 digitalocean_droplets_state: present
 digitalocean_droplets_tags: []
