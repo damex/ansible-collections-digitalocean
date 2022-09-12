@@ -21,3 +21,4 @@
     ssh_keys: "{{ digitalocean_droplet_ssh_keys_ids }}"
     monitoring: "{{ digitalocean_droplet_monitoring }}"
     state: "{{ digitalocean_droplet_state }}"
+    tags: "{{ digitalocean_droplet_tags }}"

@@ -12,6 +12,7 @@
     digitalocean_droplet_ssh_keys: "{{ digitalocean_droplet.ssh_keys | default(digitalocean_droplets_ssh_keys) }}"
     digitalocean_droplet_monitoring: "{{ digitalocean_droplet.monitoring | default(digitalocean_droplets_monitoring) }}"
     digitalocean_droplet_state: "{{ digitalocean_droplet.state | default(digitalocean_droplets_state) }}"
+    digitalocean_droplet_tags: "{{ digitalocean_droplet.tags | default(digitalocean_droplets_tags) }}"
   loop: "{{ digitalocean_droplets }}"
   loop_control:
     label: "{{ digitalocean_droplet_name }}"
