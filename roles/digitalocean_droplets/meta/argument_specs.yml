@@ -19,3 +19,25 @@ argument_specs:
           image:
             required: true
             type: str
+          base_url:
+            type: str
+          oauth_token:
+            type: str
+          state:
+            type: str
+            choices:
+              - present
+              - absent
+          tags:
+            type: list
+            elements: str
+          firewall:
+            type: list
+            elements: str
+          ssh_keys:
+            type: list
+            elements: str
+          ipv6:
+            type: bool
+          monitoring:
+            type: bool

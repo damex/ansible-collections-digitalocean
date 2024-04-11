@@ -16,3 +16,15 @@ argument_specs:
           outbound_rules:
             required: true
             type: str
+          base_url:
+            type: str
+          oauth_token:
+            type: str
+          state:
+            type: str
+            choices:
+              - present
+              - absent
+          tags:
+            type: list
+            elements: str
