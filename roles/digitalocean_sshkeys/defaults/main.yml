@@ -1,4 +1,3 @@
 ---
 digitalocean_sshkeys: [] # noqa: var-naming[no-role-prefix]
-digitalocean_sshkeys_oauth_token: ""
 digitalocean_sshkeys_state: present

@@ -4,7 +4,7 @@
   vars:
     digitalocean_sshkey_name: "{{ digitalocean_sshkey.name }}"
     digitalocean_sshkey_baseurl: "{{ digitalocean_sshkey.baseurl | default(omit) }}"
-    digitalocean_sshkey_oauth_token: "{{ digitalocean_sshkey.oauth_token | default(digitalocean_sshkeys_oauth_token) }}"
+    digitalocean_sshkey_oauth_token: "{{ digitalocean_sshkey.oauth_token | default(omit) }}"
     digitalocean_sshkey_ssh_pub_key: "{{ digitalocean_sshkey.ssh_pub_key }}"
     digitalocean_sshkey_state: "{{ digitalocean_sshkey.state | default(digitalocean_sshkeys_state) }}"
   loop: "{{ digitalocean_sshkeys }}"

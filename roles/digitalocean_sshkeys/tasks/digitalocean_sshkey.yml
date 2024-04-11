@@ -3,6 +3,6 @@
   community.digitalocean.digital_ocean_sshkey:
     name: "{{ digitalocean_sshkey_name }}"
     baseurl: "{{ digitalocean_sshkey_baseurl | default(omit) }}"
-    oauth_token: "{{ digitalocean_sshkey_oauth_token }}"
+    oauth_token: "{{ digitalocean_sshkey_oauth_token | default(omit) }}"
     ssh_pub_key: "{{ digitalocean_sshkey_ssh_pub_key }}"
     state: "{{ digitalocean_sshkey_state }}"

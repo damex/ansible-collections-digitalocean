@@ -13,7 +13,7 @@
     id: "{{ digitalocean_droplets_facts.data | selectattr('name', 'match', digitalocean_droplet_name) | map(attribute='id') | join }}"
     region: "{{ digitalocean_droplet_region }}"
     baseurl: "{{ digitalocean_droplet_baseurl | default(omit) }}"
-    oauth_token: "{{ digitalocean_droplet_oauth_token }}"
+    oauth_token: "{{ digitalocean_droplet_oauth_token | default(omit) }}"
     size: "{{ digitalocean_droplet_size }}"
     image: "{{ digitalocean_droplet_image }}"
     unique_name: true
