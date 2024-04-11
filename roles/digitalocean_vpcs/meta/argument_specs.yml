@@ -16,3 +16,14 @@ argument_specs:
           ip_range:
             required: true
             type: str
+          oauth_token:
+            type: str
+          base_url:
+            type: str
+          default:
+            type: bool
+          state:
+            type: str
+            choices:
+              - present
+              - absent
