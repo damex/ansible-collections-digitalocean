@@ -1,4 +1,3 @@
 ---
 digitalocean_firewalls: [] # noqa: var-naming[no-role-prefix]
-digitalocean_firewalls_oauth_token: ""
 digitalocean_firewalls_state: present

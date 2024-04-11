@@ -4,7 +4,7 @@
   vars:
     digitalocean_firewall_name: "{{ digitalocean_firewall.name }}"
     digitalocean_firewall_baseurl: "{{ digitalocean_firewall.baseurl | default(omit) }}"
-    digitalocean_firewall_oauth_token: "{{ digitalocean_firewall.oauth_token | default(digitalocean_firewalls_oauth_token) }}"
+    digitalocean_firewall_oauth_token: "{{ digitalocean_firewall.oauth_token | default(omit) }}"
     digitalocean_firewall_inbound_rules: "{{ digitalocean_firewall.inbound_rules }}"
     digitalocean_firewall_outbound_rules: "{{ digitalocean_firewall.outbound_rules }}"
     digitalocean_firewall_state: "{{ digitalocean_firewall.state | default(digitalocean_firewalls_state) }}"
