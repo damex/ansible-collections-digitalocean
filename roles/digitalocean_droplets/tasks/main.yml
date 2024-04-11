@@ -1,10 +1,10 @@
 ---
-- name: ensure digitalocean droplets
-  block:
-    - name: ensure digitalocean droplets facts
-      ansible.builtin.import_tasks: digitalocean_droplets_facts.yml
-    - name: ensure digitalocean droplets
-      ansible.builtin.import_tasks: digitalocean_droplets.yml
+- name: Ensure digitalocean droplets
   tags:
     - digitalocean
     - digitalocean_droplets
+  block:
+    - name: Ensure digitalocean droplets facts
+      ansible.builtin.import_tasks: digitalocean_droplets_facts.yml
+    - name: Ensure digitalocean droplets
+      ansible.builtin.import_tasks: digitalocean_droplets.yml

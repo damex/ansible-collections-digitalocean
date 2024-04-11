@@ -1,5 +1,5 @@
 ---
-digitalocean_droplets: []
+digitalocean_droplets: [] # noqa: var-naming[no-role-prefix]
 digitalocean_droplets_oauth_token: ""
 digitalocean_droplets_ssh_keys: []
 digitalocean_droplets_ipv6: false

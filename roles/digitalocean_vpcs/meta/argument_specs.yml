@@ -1,0 +1,18 @@
+---
+argument_specs:
+  main:
+    options:
+      digitalocean_vpcs:
+        type: list
+        required: true
+        elements: dict
+        options:
+          name:
+            required: true
+            type: str
+          region:
+            required: true
+            type: str
+          ip_range:
+            required: true
+            type: str

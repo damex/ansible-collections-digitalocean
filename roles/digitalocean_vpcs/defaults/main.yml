@@ -1,5 +1,5 @@
 ---
-digitalocean_vpcs: []
+digitalocean_vpcs: [] # noqa: var-naming[no-role-prefix]
 digitalocean_vpcs_oauth_token: ""
 digitalocean_vpcs_default: false
 digitalocean_vpcs_state: present

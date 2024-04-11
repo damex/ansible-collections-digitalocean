@@ -1,10 +1,10 @@
 ---
-- name: ensure digitalocean sshkeys
-  block:
-    - name: ensure digitalocean sshkeys facts
-      ansible.builtin.import_tasks: digitalocean_sshkeys_facts.yml
-    - name: ensure digitalocean sshkeys
-      ansible.builtin.import_tasks: digitalocean_sshkeys.yml
+- name: Ensure digitalocean sshkeys
   tags:
     - digitalocean
     - digitalocean_sshkeys
+  block:
+    - name: Ensure digitalocean sshkeys facts
+      ansible.builtin.import_tasks: digitalocean_sshkeys_facts.yml
+    - name: Ensure digitalocean sshkeys
+      ansible.builtin.import_tasks: digitalocean_sshkeys.yml

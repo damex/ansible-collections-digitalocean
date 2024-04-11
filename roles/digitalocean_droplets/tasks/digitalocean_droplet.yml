@@ -1,5 +1,5 @@
 ---
-- name: ensure digitalocean droplet sshkeys ids
+- name: Ensure digitalocean droplet sshkeys ids
   ansible.builtin.set_fact:
     digitalocean_droplet_ssh_keys_ids: "{{ digitalocean_droplet_ssh_keys_ids | default([]) + digitalocean_sshkeys_facts.data | selectattr('name', 'match', digitalocean_droplet_ssh_key) | map(attribute='id') }}"
   failed_when: not digitalocean_sshkeys_facts.data | selectattr('name', 'match', digitalocean_droplet_ssh_key)
@@ -7,7 +7,7 @@
   loop_control:
     loop_var: digitalocean_droplet_ssh_key
 
-- name: ensure digitalocean droplet
+- name: Ensure digitalocean droplet
   community.digitalocean.digital_ocean_droplet:
     name: "{{ digitalocean_droplet_name }}"
     id: "{{ digitalocean_droplets_facts.data | selectattr('name', 'match', digitalocean_droplet_name) | map(attribute='id') | join }}"

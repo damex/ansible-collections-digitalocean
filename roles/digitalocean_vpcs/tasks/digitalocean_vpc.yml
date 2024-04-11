@@ -1,5 +1,5 @@
 ---
-- name: ensure digitalocean vpc
+- name: Ensure digitalocean vpc
   community.digitalocean.digital_ocean_vpc:
     name: "{{ digitalocean_vpc_name }}"
     baseurl: "{{ digitalocean_vpc_baseurl | default(omit) }}"
