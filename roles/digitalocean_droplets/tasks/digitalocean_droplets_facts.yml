@@ -1,5 +1,5 @@
 ---
-- name: ensure digitalocean droplets facts
+- name: Ensure digitalocean droplets facts
   community.digitalocean.digital_ocean_droplet_info:
     oauth_token: "{{ digitalocean_droplets_oauth_token }}"
   register: digitalocean_droplets_facts

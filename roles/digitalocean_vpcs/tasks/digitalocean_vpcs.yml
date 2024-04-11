@@ -1,13 +1,13 @@
 ---
-- name: ensure digitalocean vpcs
+- name: Ensure digitalocean vpcs
   ansible.builtin.include_tasks: digitalocean_vpc.yml
   vars:
-    digitalocean_vpc_name: "{{ digitalocean_vpc.name | mandatory }}"
+    digitalocean_vpc_name: "{{ digitalocean_vpc.name }}"
     digitalocean_vpc_baseurl: "{{ digitalocean_vpc.baseurl | default(omit) }}"
     digitalocean_vpc_oauth_token: "{{ digitalocean_vpc.oauth_token | default(digitalocean_vpcs_oauth_token) }}"
     digitalocean_vpc_default: "{{ digitalocean_vpc.default | default(digitalocean_vpcs_default) }}"
-    digitalocean_vpc_region: "{{ digitalocean_vpc.region | mandatory }}"
-    digitalocean_vpc_ip_range: "{{ digitalocean_vpc.ip_range | mandatory }}"
+    digitalocean_vpc_region: "{{ digitalocean_vpc.region }}"
+    digitalocean_vpc_ip_range: "{{ digitalocean_vpc.ip_range }}"
     digitalocean_vpc_state: "{{ digitalocean_vpc.state | default(digitalocean_vpcs_state) }}"
   loop: "{{ digitalocean_vpcs }}"
   loop_control:

@@ -1,13 +1,15 @@
 ---
 namespace: damex
 name: digitalocean
-version: 0.0.13
+version: 1.0.0
 readme: README.md
 authors:
   - Roman Kuzmitskii <ansible@damex.org>
+description: digitalocean collection
 license_file: LICENSE
 tags:
   - digitalocean
+  - infrastructure
 repository: https://github.com/damex/ansible-collections-digitalocean
 issues: https://github.com/damex/ansible-collections-digitalocean/issues
 dependencies:

@@ -1,5 +1,5 @@
 ---
-- name: ensure digitalocean firewall
+- name: Ensure digitalocean firewall
   community.digitalocean.digital_ocean_firewall:
     name: "{{ digitalocean_firewall_name }}"
     baseurl: "{{ digitalocean_firewall_baseurl | default(omit) }}"

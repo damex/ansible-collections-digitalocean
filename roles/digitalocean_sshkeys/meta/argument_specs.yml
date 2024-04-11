@@ -1,0 +1,15 @@
+---
+argument_specs:
+  main:
+    options:
+      digitalocean_sshkeys:
+        type: list
+        required: true
+        elements: dict
+        options:
+          name:
+            required: true
+            type: str
+          ssh_pub_key:
+            required: true
+            type: str

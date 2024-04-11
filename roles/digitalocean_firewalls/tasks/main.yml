@@ -1,8 +1,8 @@
 ---
-- name: ensure digitalocean firewalls
-  block:
-    - name: ensure digitalocean firewalls
-      ansible.builtin.import_tasks: digitalocean_firewalls.yml
+- name: Ensure digitalocean firewalls
   tags:
     - digitalocean
     - digitalocean_firewalls
+  block:
+    - name: Ensure digitalocean firewalls
+      ansible.builtin.import_tasks: digitalocean_firewalls.yml

@@ -1,0 +1,21 @@
+---
+argument_specs:
+  main:
+    options:
+      digitalocean_droplets:
+        type: list
+        required: true
+        elements: dict
+        options:
+          name:
+            required: true
+            type: str
+          region:
+            required: true
+            type: str
+          size:
+            required: true
+            type: str
+          image:
+            required: true
+            type: str

@@ -1,5 +1,5 @@
 ---
-- name: ensure digitalocean sshkey
+- name: Ensure digitalocean sshkey
   community.digitalocean.digital_ocean_sshkey:
     name: "{{ digitalocean_sshkey_name }}"
     baseurl: "{{ digitalocean_sshkey_baseurl | default(omit) }}"

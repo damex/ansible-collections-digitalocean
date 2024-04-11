@@ -1,0 +1,18 @@
+---
+argument_specs:
+  main:
+    options:
+      digitalocean_firewalls:
+        type: list
+        required: true
+        elements: dict
+        options:
+          name:
+            required: true
+            type: str
+          inbound_rules:
+            required: true
+            type: str
+          outbound_rules:
+            required: true
+            type: str
