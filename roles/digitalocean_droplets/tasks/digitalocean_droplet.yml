@@ -7,10 +7,15 @@
   loop_control:
     loop_var: digitalocean_droplet_ssh_key
 
+- name: Ensure digitalocean droplet facts
+  ansible.builtin.set_fact:
+    digitalocean_droplet_id: "{{ digitalocean_droplets_facts.data | selectattr('name', 'match', digitalocean_droplet_name) | map(attribute='id') | join }}"
+  when: digitalocean_droplets_facts.data
+
 - name: Ensure digitalocean droplet
   community.digitalocean.digital_ocean_droplet:
     name: "{{ digitalocean_droplet_name }}"
-    id: "{{ digitalocean_droplets_facts.data | selectattr('name', 'match', digitalocean_droplet_name) | map(attribute='id') | join }}"
+    id: "{{ digitalocean_droplet_id | default(omit) }}"
     region: "{{ digitalocean_droplet_region }}"
     baseurl: "{{ digitalocean_droplet_baseurl | default(omit) }}"
     oauth_token: "{{ digitalocean_droplet_oauth_token | default(omit) }}"
