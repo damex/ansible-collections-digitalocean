@@ -28,6 +28,8 @@ argument_specs:
             choices:
               - present
               - absent
+              - active
+              - inactive
           tags:
             type: list
             elements: str
@@ -35,6 +37,7 @@ argument_specs:
             type: list
             elements: str
           ssh_keys:
+            required: true
             type: list
             elements: str
           ipv6:
