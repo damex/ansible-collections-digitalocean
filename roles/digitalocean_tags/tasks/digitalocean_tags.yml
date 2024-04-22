@@ -1,0 +1,13 @@
+---
+- name: Ensure digitalocean tags
+  community.digitalocean.digital_ocean_tag:
+    name: "{{ digitalocean_tags_resource.name }}"
+    baseurl: "{{ digitalocean_tags_resource.baseurl | default(omit) }}"
+    oauth_token: "{{ digitalocean_tags_resource.oauth_token | default(omit) }}"
+    resource_id: "{{ digitalocean_tags_resource.resource_id | default(omit) }}"
+    resource_type: "{{ digitalocean_tags_resource.resource_type | default(omit) }}"
+    state: "{{ digitalocean_tag_resource.state | default(digitalocean_tags_state) }}"
+  loop: "{{ digitalocean_tags }}"
+  loop_control:
+    label: "{{ digitalocean_tags_resource.name }}"
+    loop_var: digitalocean_tags_resource
