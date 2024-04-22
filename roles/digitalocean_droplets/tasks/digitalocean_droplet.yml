@@ -36,7 +36,7 @@
       - name: "{{ digitalocean_droplet_tag.name }}"
         resource_id: "{{ digitalocean_droplet_id | default(omit) }}"
         resource_type: droplet
-        state: "{{ digitalocean_droplet_tag.name | default(digitalocean_droplet_state) }}"
+        state: "{{ digitalocean_droplet_tag.state | default(digitalocean_droplet_state) }}"
   loop: "{{ digitalocean_droplet_tags }}"
   loop_control:
     loop_var: digitalocean_droplet_tag

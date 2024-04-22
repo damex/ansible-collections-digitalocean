@@ -32,7 +32,15 @@ argument_specs:
               - inactive
           tags:
             type: list
-            elements: str
+            elements: dict
+            options:
+              name:
+                type: str
+              state:
+                type: str
+                choices:
+                  - present
+                  - absent
           firewall:
             type: list
             elements: str
