@@ -1,0 +1,8 @@
+---
+- name: Ensure digitalocean tags
+  tags:
+    - digitalocean
+    - digitalocean_tags
+  block:
+    - name: Ensure digitalocean tags
+      ansible.builtin.import_tasks: digitalocean_tags.yml

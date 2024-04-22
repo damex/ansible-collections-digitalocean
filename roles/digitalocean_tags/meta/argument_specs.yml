@@ -1,0 +1,25 @@
+---
+argument_specs:
+  main:
+    options:
+      digitalocean_tags:
+        type: list
+        required: true
+        elements: dict
+        options:
+          name:
+            required: true
+            type: str
+          resource_id:
+            type: str
+          resource_type:
+            type: str
+          base_url:
+            type: str
+          oauth_token:
+            type: str
+          state:
+            type: str
+            choices:
+              - present
+              - absent

@@ -1,0 +1,3 @@
+---
+digitalocean_tags: [] # noqa: var-naming[no-role-prefix]
+digitalocean_tags_state: present
