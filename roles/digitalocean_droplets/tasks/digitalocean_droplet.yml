@@ -27,4 +27,16 @@
     ipv6: "{{ digitalocean_droplet_ipv6 }}"
     monitoring: "{{ digitalocean_droplet_monitoring }}"
     state: "{{ digitalocean_droplet_state }}"
-    tags: "{{ digitalocean_droplet_tags }}"
+
+- name: Ensure digitalocean droplet tags
+  ansible.builtin.include_role:
+    name: damex.digitalocean.digitalocean_tags
+  vars:
+    digitalocean_tags: # noqa: var-naming[no-role-prefix]
+      - name: "{{ digitalocean_droplet_tag.name }}"
+        resource_id: "{{ digitalocean_droplet_id | default(omit) }}"
+        resource_type: droplet
+        state: "{{ digitalocean_droplet_tag.name | default(digitalocean_droplet_state) }}"
+  loop: "{{ digitalocean_droplet_tags }}"
+  loop_control:
+    loop_var: digitalocean_droplet_tag
